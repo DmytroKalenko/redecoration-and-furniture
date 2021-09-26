@@ -398,7 +398,8 @@ header nav .navigation__links .nav_link a {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-gap: 3rem;
+  grid-column-gap: 6rem;
+  grid-row-gap: 5rem;
   padding: 5rem 0;
 }
 .workProcess__steps::before {
@@ -456,9 +457,43 @@ header nav .navigation__links .nav_link a {
   .workProcess__steps .workProcess__step:nth-child(8) {
     background: #f6f6f6;
   }
+  .workProcess__steps .workProcess__step:nth-child(1),
+  .workProcess__steps .workProcess__step:nth-child(2),
+  .workProcess__steps .workProcess__step:nth-child(3),
+  .workProcess__steps .workProcess__step:nth-child(4) {
+    position: relative;
+  }
+  .workProcess__steps .workProcess__step:nth-child(1)::after,
+  .workProcess__steps .workProcess__step:nth-child(2)::after,
+  .workProcess__steps .workProcess__step:nth-child(3)::after,
+  .workProcess__steps .workProcess__step:nth-child(4)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    right: -5rem;
+    height: 4rem;
+    width: 4rem;
+    background: url(/fonts/icons/arrows/next.svg);
+    background-size: contain;
+  }
+  .workProcess__steps .workProcess__step:nth-child(4)::after {
+    bottom: -4.5rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%) rotate(90deg);
+        -ms-transform: translateX(-50%) rotate(90deg);
+            transform: translateX(-50%) rotate(90deg);
+    top: unset;
+  }
 }
 .workProcess__steps .workProcess__step:hover {
   -webkit-box-shadow: 0 0 10px #b9a37f;
           box-shadow: 0 0 10px #b9a37f;
   z-index: 2;
+}
+.workProcess__steps .workProcess__step .workProcess__step__icon {
+  max-width: 5rem;
+  margin-bottom: 1rem;
 }
