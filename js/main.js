@@ -4,4 +4,13 @@ $('.mainBanner').slick(
         dots: true,
       }
 );
-$('.opinions').slick();
+$('.opinions .opinions__container').slick(
+  {
+    infinite: true,
+    dots: true,
+    slidesToShow: 1,
+    slidesToScroll:1,
+    // centerMode: true,
+    adaptiveHeight: true,
+  }
+);

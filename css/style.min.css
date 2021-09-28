@@ -204,6 +204,51 @@ button {
   height: 3px;
   background: #b9a37f;
 }
+.slick-slider .slick-list {
+  position: relative;
+}
+.slick-slider .slick-arrow {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.slick-slider .slick-next {
+  right: 0;
+}
+.slick-slider .slick-prev {
+  left: 0;
+}
+.slick-slider .slick-dots {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.slick-slider .slick-dots li {
+  font-size: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #f6f6f6;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  display: inline-block;
+}
+.slick-slider .slick-dots li.slick-active,
+.slick-slider .slick-dots li:hover {
+  background-color: #b9a37f;
+}
+.slick-slider .slick-dots li + li {
+  margin-left: 1rem;
+}
 header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -281,27 +326,13 @@ header nav .navigation__links .nav_link a {
   background-color: #00000031;
   z-index: 1;
 }
-.mainBanner .slick-arrow {
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-.mainBanner .slick-next {
-  right: 0;
-}
-.mainBanner .slick-prev {
-  left: 0;
-}
 .mainBanner .slick-dots {
   position: absolute;
+  bottom: 1rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
-  bottom: 1rem;
 }
 .mainBanner .slick-dots li {
   font-size: 0;
@@ -401,6 +432,12 @@ header nav .navigation__links .nav_link a {
   grid-column-gap: 6rem;
   grid-row-gap: 5rem;
   padding: 5rem 0;
+  margin-bottom: 4rem;
+}
+@media (min-width: 979px) {
+  .workProcess__steps {
+    margin-bottom: 6rem;
+  }
 }
 .workProcess__steps::before {
   content: '';
@@ -487,6 +524,26 @@ header nav .navigation__links .nav_link a {
             transform: translateX(-50%) rotate(90deg);
     top: unset;
   }
+  .workProcess__steps .workProcess__step:nth-child(5),
+  .workProcess__steps .workProcess__step:nth-child(6),
+  .workProcess__steps .workProcess__step:nth-child(7) {
+    position: relative;
+  }
+  .workProcess__steps .workProcess__step:nth-child(5)::before,
+  .workProcess__steps .workProcess__step:nth-child(6)::before,
+  .workProcess__steps .workProcess__step:nth-child(7)::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%) rotate(180deg);
+        -ms-transform: translateY(-50%) rotate(180deg);
+            transform: translateY(-50%) rotate(180deg);
+    right: -5rem;
+    height: 4rem;
+    width: 4rem;
+    background: url(/fonts/icons/arrows/next.svg);
+    background-size: contain;
+  }
 }
 .workProcess__steps .workProcess__step:hover {
   -webkit-box-shadow: 0 0 10px #b9a37f;
@@ -496,4 +553,40 @@ header nav .navigation__links .nav_link a {
 .workProcess__steps .workProcess__step .workProcess__step__icon {
   max-width: 5rem;
   margin-bottom: 1rem;
+}
+.opinions .slick-slide .opinion__items.item {
+  width: 50%!important;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  margin: 0 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 2rem;
+}
+.opinions .slick-slide .opinion__items.item .item__name-persone {
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+.opinions .slick-slide .opinion__items.item .item__text {
+  text-align: center;
+}
+.opinions .slick-slide .opinion__items img {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+}
+.opinions .slick-slide .slick-dots {
+  margin-top: 2rem;
 }
