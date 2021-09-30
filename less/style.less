@@ -99,12 +99,12 @@ h3,
 h4,
 h5,
 h6 {
-    line-height: normal ;
+    line-height: normal;
 }
 
 p {
     line-height: 2;
-    margin: 1rem 0 ;
+    margin: 1rem 0;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -142,7 +142,7 @@ html,
 body {
     box-sizing: border-box;
     font-size: 10px;
-    font-family: 'Poppins', sans-serif ;
+    font-family: 'Poppins', sans-serif;
 }
 
 a {
@@ -196,15 +196,15 @@ button {
 @borderColor: #E2E2E2;
 
 
-.col-6(){
+.col-6() {
     flex: 0 0 50%;
     max-width: 50%;
-} 
+}
 
-.col-md-3(){
+.col-md-3() {
     flex: 0 0 25%;
     max-width: 25%;
-} 
+}
 
 
 .headline {
@@ -244,15 +244,9 @@ button {
     }
 }
 
-.slick-slider.slick-initialized{
-    display: flex;
+.slick-slider {
     .slick-list {
-        position: relative;  
-        .slick-slide{
-            img{
-                width: auto!important;
-            }
-        }
+        position: relative;
     }
 
     .slick-arrow {
@@ -264,7 +258,7 @@ button {
         font-size: 0;
         height: 55px;
         width: 62px;
-        
+
         &::after {
             content: '';
             position: absolute;
@@ -276,7 +270,7 @@ button {
             background: url(/fonts/icons/arrows/next.svg);
             background-size: contain;
             filter: invert(65%) sepia(10%) saturate(948%) hue-rotate(358deg) brightness(99%) contrast(94%);
-        }    
+        }
     }
 
     .slick-next {
@@ -286,13 +280,14 @@ button {
     .slick-prev {
         left: 0;
         transform: translateY(-50%) rotate(-180deg);
-       
+
     }
 
     .slick-dots {
         position: relative;
         display: flex;
         justify-content: center;
+
         li {
             font-size: 0;
             width: 1.8rem;
@@ -302,7 +297,7 @@ button {
             background-color: @grayColor;
             transition: all .5s;
             display: inline-block;
-           
+
             &.slick-active,
             &:hover {
                 background-color: @pimaryColor;
@@ -377,6 +372,7 @@ header {
     img {
         width: 100vw;
     }
+
     .slick-list {
         position: relative;
 
@@ -389,12 +385,13 @@ header {
             z-index: 1;
         }
     }
+
     .slick-dots {
         position: absolute;
         bottom: 1rem;
         left: 50%;
         transform: translateX(-50%);
-       
+
         li {
             font-size: 0;
             width: 1.8rem;
@@ -404,7 +401,8 @@ header {
             background-color: @grayColor;
             transition: all .5s;
             display: inline-block;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
             &.slick-active,
             &:hover {
                 background-color: @pimaryColor;
@@ -438,13 +436,11 @@ header {
     .benefits__items {
         display: flex;
         flex-wrap: wrap;
-        
-@media @laptop{
 
-}
+        @media @laptop {}
 
         .benefits__item {
-           
+
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -452,10 +448,11 @@ header {
             text-align: center;
             transition: all .5s;
             .col-6;
-            @media @laptop{
-               .col-md-3; 
+
+            @media @laptop {
+                .col-md-3;
             }
-            
+
             @media (max-width: 767px) {
                 aspect-ratio: 3/2;
 
@@ -501,10 +498,12 @@ header {
 
     padding: 5rem 0;
     margin-bottom: 4rem;
-    @media @laptop{
+
+    @media @laptop {
         margin-bottom: 6rem;
     }
-        &::before {
+
+    &::before {
         content: '';
         position: absolute;
         top: 0;
@@ -610,12 +609,12 @@ header {
     }
 }
 
-.opinions{
-    .slick-slide{
-       
-        .opinion__items{
-            &.item{
-                width: 50%!important;
+.opinions {
+    .slick-slide {
+
+        .opinion__items {
+            &.item {
+                width: 50% !important;
                 display: flex !important;
                 margin: 0 auto;
                 flex-direction: column;
@@ -623,38 +622,71 @@ header {
                 align-content: center;
                 justify-content: center;
                 margin-bottom: 2rem;
-                .item__name-persone{
+
+                .item__name-persone {
                     font-weight: 500;
                     font-size: 2rem;
                     margin: 1rem 0;
                 }
-                .item__text{
+
+                .item__text {
                     text-align: center;
                     line-height: 1.5;
                 }
             }
-            img{
-            width: 15rem;
-            height: 15rem;
-            border-radius: 50%; 
+
+            img {
+                width: 15rem;
+                height: 15rem;
+                border-radius: 50%;
             }
         }
-        .slick-dots{
+
+        .slick-dots {
             margin-top: 2rem;
         }
     }
 
-    
+
 }
 
 
-.works{
+.works {
     // img{
     //     max-width: 70%;
     // }
-    .works__container{
-        .slick-slide {
-        margin: 0 1rem;
+
+    .sliders {
+        // position: relative;
+
+        // .slick-slider {
+        //     position: unset;
+        // }
+
+        .works__container {
+            margin-bottom: 4rem;
+            .container__item {
+                position: relative;
+                width: auto !important;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .photos__navigation {
+            .slick-slide{
+                  margin: 0 2rem;
+                  .navigation__item {
+                aspect-ratio: 1/1;
+                object-fit: cover;
+              
+            }
+            }
+            
+
+        }
     }
-    }
+
+
+
 }

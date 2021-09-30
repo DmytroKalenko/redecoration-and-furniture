@@ -36,7 +36,6 @@ gulp.task('style', function() { ///add CSS files our option counten __slick_slid
     return gulp.src([
             'node_modules/normalize.css/normalize.css',
             'node_modules/slick-carousel/slick/slick.css', // here write route to our .js files
-            'node_modules/slick-carousel/slick/slick.css',
 
 
             ///here you can add new rout to you option counten
