@@ -98,11 +98,11 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: normal !important;
+  line-height: normal ;
 }
 p {
   line-height: 2;
-  margin: 1rem 0 !important;
+  margin: 1rem 0 ;
 }
 /* HTML5 display-role reset for older browsers */
 body {
@@ -132,7 +132,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 10px;
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Poppins', sans-serif;
 }
 a {
   display: inline-block;
@@ -204,24 +204,54 @@ button {
   height: 3px;
   background: #b9a37f;
 }
-.slick-slider .slick-list {
+.slick-slider.slick-initialized {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.slick-slider.slick-initialized .slick-list {
   position: relative;
 }
-.slick-slider .slick-arrow {
+.slick-slider.slick-initialized .slick-list .slick-slide img {
+  width: auto!important;
+}
+.slick-slider.slick-initialized .slick-arrow {
   position: absolute;
   z-index: 1;
   top: 50%;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
+  background: transparent;
+  font-size: 0;
+  height: 55px;
+  width: 62px;
 }
-.slick-slider .slick-next {
+.slick-slider.slick-initialized .slick-arrow::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 5.5rem;
+  width: 6.2rem;
+  background: url(/fonts/icons/arrows/next.svg);
+  background-size: contain;
+  -webkit-filter: invert(65%) sepia(10%) saturate(948%) hue-rotate(358deg) brightness(99%) contrast(94%);
+          filter: invert(65%) sepia(10%) saturate(948%) hue-rotate(358deg) brightness(99%) contrast(94%);
+}
+.slick-slider.slick-initialized .slick-next {
   right: 0;
 }
-.slick-slider .slick-prev {
+.slick-slider.slick-initialized .slick-prev {
   left: 0;
+  -webkit-transform: translateY(-50%) rotate(-180deg);
+      -ms-transform: translateY(-50%) rotate(-180deg);
+          transform: translateY(-50%) rotate(-180deg);
 }
-.slick-slider .slick-dots {
+.slick-slider.slick-initialized .slick-dots {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -230,7 +260,7 @@ button {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.slick-slider .slick-dots li {
+.slick-slider.slick-initialized .slick-dots li {
   font-size: 0;
   width: 1.8rem;
   height: 1.8rem;
@@ -242,11 +272,11 @@ button {
   transition: all 0.5s;
   display: inline-block;
 }
-.slick-slider .slick-dots li.slick-active,
-.slick-slider .slick-dots li:hover {
+.slick-slider.slick-initialized .slick-dots li.slick-active,
+.slick-slider.slick-initialized .slick-dots li:hover {
   background-color: #b9a37f;
 }
-.slick-slider .slick-dots li + li {
+.slick-slider.slick-initialized .slick-dots li + li {
   margin-left: 1rem;
 }
 header {
@@ -345,6 +375,8 @@ header nav .navigation__links .nav_link a {
   -o-transition: all 0.5s;
   transition: all 0.5s;
   display: inline-block;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .mainBanner .slick-dots li.slick-active,
 .mainBanner .slick-dots li:hover {
@@ -374,7 +406,6 @@ header nav .navigation__links .nav_link a {
       flex-wrap: wrap;
 }
 .benefits .benefits__items .benefits__item {
-  padding: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -392,6 +423,18 @@ header nav .navigation__links .nav_link a {
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  max-width: 50%;
+}
+@media (min-width: 979px) {
+  .benefits .benefits__items .benefits__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+    max-width: 25%;
+  }
 }
 @media (max-width: 767px) {
   .benefits .benefits__items .benefits__item {
@@ -581,6 +624,7 @@ header nav .navigation__links .nav_link a {
 }
 .opinions .slick-slide .opinion__items.item .item__text {
   text-align: center;
+  line-height: 1.5;
 }
 .opinions .slick-slide .opinion__items img {
   width: 15rem;
@@ -589,4 +633,7 @@ header nav .navigation__links .nav_link a {
 }
 .opinions .slick-slide .slick-dots {
   margin-top: 2rem;
+}
+.works .works__container .slick-slide {
+  margin: 0 1rem;
 }
