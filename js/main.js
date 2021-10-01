@@ -32,6 +32,6 @@ $('.photos__navigation').slick({
   slidesToShow: 5,
   slidesToScroll: 1,
   asNavFor: '.works__container',
-  dots: true,
+  // dots: true,
   focusOnSelect: true
 });
