@@ -12,6 +12,7 @@ $('.opinions .opinions__container').slick(
     slidesToScroll:1,
     // centerMode: true,
     adaptiveHeight: true,
+    initialSlide: 2,
   }
 );
 
