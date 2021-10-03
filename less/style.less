@@ -143,11 +143,17 @@ body {
     box-sizing: border-box;
     font-size: 10px;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 a {
     display: inline-block;
     text-decoration: none;
+    color: @linkColor;
+    transition: all .5s;
+    &:hover{
+       color: @linkColor__hover;
+    }
 }
 
 * {
@@ -194,7 +200,8 @@ button {
 @textColor: #000000;
 @grayColor: #f6f6f6;
 @borderColor: #E2E2E2;
-
+@linkColor: #000000;
+@linkColor__hover:#b9a37f;
 
 .col-6() {
     flex: 0 0 50%;
@@ -206,6 +213,15 @@ button {
     max-width: 25%;
 }
 
+.btn{
+    background-color: @pimaryColor;
+    border-radius: .5rem;
+    transition: all .5s;
+    &:hover{
+        background-color: #000000;
+        color: #ffffff;
+    }
+}
 
 .headline {
     .headline__text {
@@ -267,9 +283,8 @@ button {
             transform: translateY(-50%);
             height: 5.5rem;
             width: 6.2rem;
-            background: url(/fonts/icons/arrows/next.svg);
+            background: url(/fonts/icons/arrows/next_primary_color.svg);
             background-size: contain;
-            filter: invert(65%) sepia(10%) saturate(948%) hue-rotate(358deg) brightness(99%) contrast(94%);
         }
     }
 
@@ -316,7 +331,18 @@ header {
     align-items: center;
     align-content: center;
     font-size: 1.4rem;
-    border-bottom: 1px solid @borderColor;
+    position: relative;
+    &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100vw;
+        left: 50%;
+        z-index: -1;
+        margin-left: -50vw;
+        background-color:  #ffffff;
+    }
     .contacts {
         display: flex;
         align-items: center;
@@ -415,6 +441,11 @@ header {
             &+li {
                 margin-left: 1rem;
             }
+        }
+    }
+    .slick-arrow {
+        &::after {
+            filter: brightness(0) invert(1);
         }
     }
 }
@@ -681,6 +712,7 @@ header {
         
         
     }
+   
     .slick-dots {
         margin-top: 2rem;
         li{
@@ -700,7 +732,6 @@ header {
     .headline{
         margin-bottom: 4rem;
     }
-    
 
     // img{
     //     max-width: 70%;
@@ -726,13 +757,14 @@ header {
         }
 
         .photos__navigation {
+            position: static;
             .slick-slide {
                 margin: 0 2rem;
 
                 .navigation__item {
                     aspect-ratio: 1/1;
                     object-fit: cover;
-
+                    cursor: pointer;
                 }
             }
 
@@ -802,13 +834,12 @@ header {
                 }
             }
 
-            button[type="submit"] {
+            button[type="submit"].btn {
                 height: 5rem;
                 margin-bottom: 2rem;
-                background-color: @pimaryColor;
-                border-radius: .5rem;
                 font-size: 2rem;
                 padding: 14.8px 28.3px 17.2px 28.5px;
+          
             }
 
             .social-media {
@@ -840,6 +871,18 @@ footer{
     }
     display: flex;
     justify-content: space-between;
+    position: relative;
+    &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100vw;
+        left: 50%;
+        z-index: -1;
+        margin-left: -50vw;
+        background-color:  @pimaryColor;
+    }
     .footer__links{
         display: flex;
         align-content: center;
