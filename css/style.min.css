@@ -883,3 +883,17 @@ footer .footer__links {
 footer .footer__links .nav_link {
   margin: 0 1rem;
 }
+.services .services__items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 3rem;
+}
+.services .services__items .services__item {
+  aspect-ratio: 1;
+}
+.services .services__items .services__item .item__icon {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
