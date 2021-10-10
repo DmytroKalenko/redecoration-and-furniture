@@ -74,15 +74,14 @@ function validateName() {
 function validatePhoneNumber() {
     if (input_phone.value.length <= 0) {
         alert('number can"t be empty');
-    } else if (!typeof(input_phone.) == "number") {
+    } else if (typeof(input_phone.value) === "number") {
         alert('incorrect number')
     } else {
         validatForm.phoneValid = true;
-        console.log('well done');
+        console.log('well done', typeof(input_phone.value));
     }
 
-    console.log(typeof(input_phone));
-    console.log(input_phone);
+
 }
 
 btnSubmit.addEventListener('click', (e) => {
