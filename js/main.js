@@ -65,9 +65,9 @@ function validateName() {
         validatForm = true;
     }
 }
-
+// validate phonenuumber 
 function validatePhoneNumber() {
-
+    if (input_phone.value.length)
 }
 
 btnSubmit.addEventListener('click', (e) => {
@@ -77,35 +77,3 @@ btnSubmit.addEventListener('click', (e) => {
         console.log("form is validate");
     }
 })
-
-
-
-
-
-
-
-
-let PRACOWNICY = [
-    { "imie": "Jan", "nazwisko": "Kowalski", "dzial": "IT", "wynagrodzenieKwota": "3000", "wynagrodzenieWaluta": "PLN" },
-    { "imie": "Anna", "nazwisko": "Bąk", "dzial": "Administracja", "wynagrodzenieKwota": "2400.50", "wynagrodzenieWaluta": "PLN" },
-    { "imie": "Paweł", "nazwisko": "Zabłocki", "dzial": "IT", "wynagrodzenieKwota": "3300", "wynagrodzenieWaluta": "PLN" },
-    { "imie": "Tomasz", "nazwisko": "Osiecki", "dzial": "Administracja", "wynagrodzenieKwota": "2100", "wynagrodzenieWaluta": "PLN" },
-    { "imie": "Iwona", "nazwisko": "Leihs-Gutowska", "dzial": "Handlowiec", "wynagrodzenieKwota": "3100", "wynagrodzenieWaluta": "PLN" },
-]
-
-const tableBody = document.querySelector('.table_body tbody')
-
-PRACOWNICY.forEach(element => {
-    let row = document.createElement('tr')
-    for (let index = 0; index < 4; index++) {
-        let dataItem__names = document.createElement('td')
-        let dataItem__surnames = document.createElement('td')
-        dataItem.textContent = `${element.imie}`
-        row.appendChild(names)
-
-    }
-    tableBody.appendChild(row)
-
-    // dataItem.
-
-});
