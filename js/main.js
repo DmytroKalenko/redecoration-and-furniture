@@ -46,51 +46,68 @@ moveTo();
 // validate form
 function validateForm() {
 
-}
+    let input_name = document.querySelector(".contact-form__form input[type='text']")
+    let input_phone = document.querySelector(".contact-form__form input[type = 'tel']")
+    const btnSubmit = document.querySelector('.contact-form__form button[type="submit"]')
 
+    // validate name
 
-let input_name = document.querySelector(".contact-form__form input[type='text']")
-let input_phone = document.querySelector(".contact-form__form input[type = 'tel']")
-const btnSubmit = document.querySelector('.contact-form__form button[type="submit"]')
-
-// validate name
-
-let validatForm = {
-    nameValid: false,
-    phoneValid: false
-}
-
-function validateName() {
-    if (input_name.value.length <= 0) {
-        alert('name can"t be empty');
-    } else if (!input_name.value.match(/^[A-Za-z]+$/)) {
-        alert('incorrect name');
-        input_name.value = "";
-    } else {
-        validatForm.nameValid = true;
-    }
-}
-// validate phone number 
-function validatePhoneNumber() {
-    if (input_phone.value.length <= 0) {
-        alert('number can"t be empty');
-    } else if (!input_phone.value.match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im)) {
-        alert('incorrect number')
-    } else {
-        validatForm.phoneValid = true;
-        console.log("well done");
+    let validatForm = {
+        nameValid: false,
+        phoneValid: false
     }
 
+    function validateName() {
+        if (input_name.value.length <= 0) {
+            alert('name can"t be empty');
+        } else if (!input_name.value.match(/^[A-Za-z]+$/)) {
+            alert('incorrect name');
+            input_name.value = "";
+        } else {
+            validatForm.nameValid = true;
+        }
+    }
+    // validate phone number 
+    function validatePhoneNumber() {
+        if (input_phone.value.length <= 0) {
+            alert('number can"t be empty');
+        } else if (!input_phone.value.match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im)) {
+            alert('incorrect number')
+        } else {
+            validatForm.phoneValid = true;
+        }
+
+
+    }
+
+    btnSubmit.addEventListener('click', (e) => {
+        e.preventDefault();
+        validateName();
+        validatePhoneNumber();
+        alert('form has been sended')
+    })
 
 }
+validateForm()
 
-btnSubmit.addEventListener('click', (e) => {
-    e.preventDefault();
-    validateName();
-    validatePhoneNumber();
-    // if (validatForm.phoneValid && validatForm.nameValid) {
-    //     alert("form is validate");
-    // } else {
-    //     alert('form is invalid')
-    // }
-})
+
+// scroll to up site
+
+function showScrollUp() {
+    window.addEventListener('scroll', () => {
+        console.log(pageYOffset);
+        if (pageYOffset >= 250) {
+            document.querySelector('#toUp').style.opacity = "1"
+        } else {
+            document.querySelector('#toUp').style.opacity = "0"
+        }
+    })
+}
+showScrollUp()
+
+function scrollUp() {
+    document.querySelector('#toUp').addEventListener('click', () => {
+        window.scrollTo(0, 0)
+    })
+}
+scrollUp()

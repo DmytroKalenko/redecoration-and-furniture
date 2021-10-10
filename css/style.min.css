@@ -184,10 +184,37 @@ button {
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+  cursor: pointer;
 }
 .btn:hover {
   background-color: #000000;
   color: #ffffff;
+}
+.btn.toUp {
+  width: 5rem;
+  height: 5rem;
+  display: block;
+  opacity: 0;
+  border-radius: 50%;
+  position: fixed;
+  right: 4rem;
+  bottom: 4rem;
+  z-index: 2;
+  background-color: #000000;
+}
+.btn.toUp:hover {
+  background-color: #b9a37f;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.btn.toUp img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 50%;
 }
 .headline .headline__text {
   text-transform: uppercase;

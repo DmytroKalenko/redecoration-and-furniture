@@ -218,10 +218,44 @@ button {
     background-color: @pimaryColor;
     border-radius: .5rem;
     transition: all .5s;
+    cursor: pointer;
 
     &:hover {
         background-color: #000000;
         color: #ffffff;
+    }
+
+    &.toUp {
+
+        //    position: fixed;
+        // @media @laptop {
+        width: 5rem;
+        height: 5rem;
+        display: block;
+        opacity: 0;
+        border-radius: 50%;
+        position: fixed;
+        right: 4rem;
+        bottom: 4rem;
+        z-index: 2;
+        background-color: #000000;
+
+        &:hover {
+            background-color: @pimaryColor;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 50%;
+        }
+
+        // }
+
     }
 }
 
