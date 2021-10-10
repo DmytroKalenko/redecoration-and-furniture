@@ -44,6 +44,10 @@ moveTo();
 
 
 // validate form
+function validateForm() {
+
+}
+
 
 let input_name = document.querySelector(".contact-form__form input[type='text']")
 let input_phone = document.querySelector(".contact-form__form input[type = 'tel']")
@@ -51,29 +55,43 @@ const btnSubmit = document.querySelector('.contact-form__form button[type="submi
 
 // validate name
 
-let validatForm = false
+let validatForm = {
+    nameValid: false,
+    phoneValid: false
+}
 
 function validateName() {
     if (input_name.value.length <= 0) {
         alert('name can"t be empty');
-        validatForm = false;
     } else if (!input_name.value.match(/^[A-Za-z]+$/)) {
         alert('incorrect name');
         input_name.value = "";
-        validatForm = false;
     } else {
-        validatForm = true;
+        validatForm.nameValid = true;
     }
 }
-// validate phonenuumber 
+// validate phone number 
 function validatePhoneNumber() {
-    if (input_phone.value.length)
+    if (input_phone.value.length <= 0) {
+        alert('number can"t be empty');
+    } else if (!typeof(input_phone.) == "number") {
+        alert('incorrect number')
+    } else {
+        validatForm.phoneValid = true;
+        console.log('well done');
+    }
+
+    console.log(typeof(input_phone));
+    console.log(input_phone);
 }
 
 btnSubmit.addEventListener('click', (e) => {
     e.preventDefault();
-    validateName()
-    if (validatForm) {
-        console.log("form is validate");
-    }
+    validateName();
+    validatePhoneNumber();
+    // if (validatForm.phoneValid && validatForm.nameValid) {
+    //     alert("form is validate");
+    // } else {
+    //     alert('form is invalid')
+    // }
 })
