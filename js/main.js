@@ -74,11 +74,11 @@ function validateName() {
 function validatePhoneNumber() {
     if (input_phone.value.length <= 0) {
         alert('number can"t be empty');
-    } else if (typeof(input_phone.value) === "number") {
+    } else if (!input_phone.value.match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im)) {
         alert('incorrect number')
     } else {
         validatForm.phoneValid = true;
-        console.log('well done', typeof(input_phone.value));
+        console.log("well done");
     }
 
 
