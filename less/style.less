@@ -315,6 +315,10 @@ button {
             transition: all .5s;
             display: inline-block;
 
+            button {
+                font-size: 0;
+            }
+
             &.slick-active,
             &:hover {
                 background-color: @pimaryColor;
@@ -385,11 +389,14 @@ header {
                 align-content: center;
                 align-items: center;
                 padding: 0 1.5rem;
-                p{cursor: pointer;
+
+                p {
+                    cursor: pointer;
                     transition: all .5s;
-                   &:hover{
-                       color: @linkColor__hover;
-                   } 
+
+                    &:hover {
+                        color: @linkColor__hover;
+                    }
                 }
 
                 a {
@@ -399,7 +406,7 @@ header {
                     margin-top: 2.6em;
                     position: relative;
                     line-height: 2.1em;
-                  
+
                 }
             }
         }
@@ -934,19 +941,22 @@ footer {
 
 .services {
     border-bottom: 1px solid @borderColor;
-    @media @laptop{
+
+    @media @laptop {
         padding-bottom: 7rem;
         margin-bottom: 3rem;
     }
+
     .services__items {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 3rem;
-        
+
         .services__item {
             aspect-ratio: ~'1/1';
             position: relative;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
             picture {
                 position: relative;
                 display: block;

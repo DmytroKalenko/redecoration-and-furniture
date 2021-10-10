@@ -281,6 +281,9 @@ button {
   transition: all 0.5s;
   display: inline-block;
 }
+.slick-slider .slick-dots li button {
+  font-size: 0;
+}
 .slick-slider .slick-dots li.slick-active,
 .slick-slider .slick-dots li:hover {
   background-color: #b9a37f;
