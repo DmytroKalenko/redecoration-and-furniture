@@ -84,7 +84,9 @@ function validateForm() {
         e.preventDefault();
         validateName();
         validatePhoneNumber();
-        alert('form has been sended')
+        if (validatForm.nameValid && validatForm.phoneValid) {
+            alert('form has been sended')
+        }
     })
 
 }
@@ -95,7 +97,6 @@ validateForm()
 
 function showScrollUp() {
     window.addEventListener('scroll', () => {
-        console.log(pageYOffset);
         if (pageYOffset >= 250) {
             document.querySelector('#toUp').style.opacity = "1"
         } else {
@@ -111,3 +112,30 @@ function scrollUp() {
     })
 }
 scrollUp()
+
+//create burger-menu
+
+document.querySelector('#menu_navbar').appendChild(document.querySelector('nav'))
+
+document.querySelector('#menu_navbar').appendChild(document.querySelector('.contacts__content'))
+if(window.innerWidth < 978){
+    
+
+}
+function openNavigation(){
+    document.querySelector('.navbar-toggler').addEventListener('click',()=>{
+        document.querySelector('aside').classList.add('__show');
+        document.documentElement.classList.add('__showNav');
+        
+        window.addEventListener('click', (e)=>{
+            console.dir(e.target.tagName);
+            if(e.target.tagName !== 'ASIDE' && e.target.className !== "navbar-toggler" && e.target.className !== "toggler_icon"){
+                console.log('it is not aside');
+                document.querySelector('aside').classList.remove('__show');
+                document.documentElement.classList.remove('__showNav');
+            }
+        })
+    })
+}
+openNavigation()
+
