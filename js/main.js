@@ -1,6 +1,12 @@
 $('.mainBanner').slick({
     infinite: true,
     dots: true,
+    responsive: [{
+        breakpoint: 768,
+        settings: {
+            arrows: false,
+        }
+    }, ]
 });
 $('.opinions .opinions__container').slick({
     infinite: true,
@@ -9,11 +15,17 @@ $('.opinions .opinions__container').slick({
     slidesToScroll: 1,
     adaptiveHeight: true,
     initialSlide: 2,
+    responsive: [{
+        breakpoint: 768,
+        settings: {
+            arrows: false,
+        }
+    }, ]
 });
 
 //doble slider with work
 $('.works__container').slick({
-
+    adaptiveHeight: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,

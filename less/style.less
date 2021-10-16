@@ -222,6 +222,12 @@ button {
 @linkColor: #000000;
 @linkColor__hover: #b9a37f;
 
+.container__padding {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+
 .col-6() {
     flex: 0 0 50%;
     max-width: 50%;
@@ -231,6 +237,8 @@ button {
     flex: 0 0 25%;
     max-width: 25%;
 }
+
+
 
 .btn {
     background-color: @pimaryColor;
@@ -565,6 +573,7 @@ header {
     border-bottom: 1px solid @borderColor;
     padding-bottom: 2rem;
     margin-bottom: 4rem;
+    .container__padding();
 
     @media @laptop {
         padding-bottom: 5rem;
@@ -578,15 +587,17 @@ header {
 }
 
 .benefits {
+    position: relative;
     padding: 3rem 0;
     margin-bottom: 4rem;
+    .container__padding();
 
     @media @laptop {
         padding: 6rem 0;
         margin-bottom: 6rem;
     }
 
-    position: relative;
+
 
     &::before {
         content: '';
@@ -618,6 +629,7 @@ header {
 
         @media @laptop {
             grid-template-columns: repeat(4, 1fr);
+
         }
 
         .benefits__item {
@@ -628,30 +640,55 @@ header {
             justify-content: center;
             text-align: center;
             transition: all .5s;
+            padding: 1.5rem 0;
+            background: @pimaryColor;
 
+            &:nth-child(odd) {
+                background: #ffffff;
+            }
 
-            @media @tablet {}
+            ;
 
-            @media @laptop {
-                aspect-ratio: 3/2;
+            @media (max-width: 978px) {
+                &:nth-child(even) {
+                    img {
+                        filter: invert(100%) sepia(56%) saturate(2%) hue-rotate(74deg) brightness(109%) contrast(101%);
 
-                &:nth-child(1),
-                &:nth-child(4),
-                &:nth-child(5),
-                &:nth-child(8) {
-                    background: @grayColor;
+                    }
+
+                    .benefits__item__title {
+                        color: #ffffff;
+                    }
                 }
+
+                ;
+            }
+
+
+            @media @tablet {
+                aspect-ratio: 1/1;
             }
 
             @media @laptop {
-                aspect-ratio: 1/1;
+                background: #ffffff;
 
                 &:nth-child(1),
                 &:nth-child(3),
                 &:nth-child(6),
                 &:nth-child(8) {
-                    background: @grayColor;
+                    background: @pimaryColor;
+
+                    img {
+                        filter: invert(100%) sepia(56%) saturate(2%) hue-rotate(74deg) brightness(109%) contrast(101%);
+
+                    }
+
+                    .benefits__item__title {
+                        color: #ffffff;
+                    }
                 }
+
+                ;
             }
 
             &:hover {
@@ -670,6 +707,7 @@ header {
 .workProcess {
     border-top: 1px solid @borderColor;
     padding-top: 4rem;
+    .container__padding();
 
     @media @laptop {
 
@@ -719,37 +757,28 @@ header {
             text-align: center;
             transition: all .5s;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            aspect-ratio: ~'1/1';
+            padding: 1.5rem;
             background: #ffffff;
 
             &:nth-child(odd) {
                 background-color: @pimaryColor;
+
+                @media (max-width: 978px) {
+                    img {
+                        filter: invert(100%) sepia(56%) saturate(2%) hue-rotate(74deg) brightness(109%) contrast(101%);
+
+                    }
+
+                    .workProcess__step__title {
+                        color: #ffffff;
+                    }
+                }
+
             }
 
             @media @tablet {
-                &:nth-child(odd) {
-                    background: #ffffff;
-                }
-
-                &:nth-child(2),
-                &:nth-child(3),
-                &:nth-child(6),
-                &:nth-child(7) {
-                    background: @pimaryColor;
-                }
+                aspect-ratio: ~'1/1';
             }
-
-            @media @laptop {
-                aspect-ratio: 3/2;
-
-                &:nth-child(1),
-                &:nth-child(4),
-                &:nth-child(5),
-                &:nth-child(8) {
-                    background: @grayColor;
-                }
-            }
-
 
             @media @laptop {
                 aspect-ratio: 1/1;
@@ -759,7 +788,22 @@ header {
                 &:nth-child(6),
                 &:nth-child(8) {
                     background: @grayColor;
+
                 }
+
+                &:nth-child(2),
+                &:nth-child(4),
+                &:nth-child(5),
+                &:nth-child(7) {
+                    img {
+                        filter: invert(100%) sepia(56%) saturate(2%) hue-rotate(74deg) brightness(109%) contrast(101%);
+                    }
+
+                    .workProcess__step__title {
+                        color: #ffffff;
+                    }
+                }
+
 
                 &:nth-child(1),
                 &:nth-child(2),
@@ -815,7 +859,11 @@ header {
                 z-index: 2;
             }
 
-            .workProcess__step__icon {
+            &__title {
+                line-height: 1.3;
+            }
+
+            &__icon {
                 max-width: 5rem;
                 margin-bottom: 1rem;
             }
@@ -860,6 +908,8 @@ header {
                 .item__text {
                     text-align: center;
                     line-height: 1.5;
+                    width: 100%;
+                    overflow: hidden;
                 }
             }
 
@@ -888,6 +938,7 @@ header {
     position: relative;
     padding-top: 4rem;
     margin-bottom: 4rem;
+    .container__padding();
 
     @media @laptop {
         margin-bottom: 6rem;
@@ -926,6 +977,13 @@ header {
             .slick-slide {
                 margin: 0 2rem;
 
+                @media (max-width: 978px) {
+                    img {
+                        width: 4rem !important;
+                        height: 4rem;
+                    }
+                }
+
                 .navigation__item {
                     aspect-ratio: 1/1;
                     object-fit: cover;
@@ -948,6 +1006,8 @@ header {
     justify-content: center;
     align-content: center;
     align-items: center;
+    padding: 0 1.5rem;
+
 
     @media @laptop {
         margin-top: 6rem;
@@ -969,11 +1029,16 @@ header {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            padding: 4rem 6rem;
+            padding: 3rem;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             border-radius: 1rem;
             background-color: #ffffff;
+            min-width: 300px;
 
+            @media @tablet {
+                width: 50%;
+                padding: 4rem 6rem;
+            }
 
             @media @laptop {
                 width: 400px;
@@ -995,16 +1060,18 @@ header {
             input {
                 height: 5rem;
                 font-size: 2rem;
-                padding-left: 4rem;
                 border: 1px solid @borderColor;
                 margin-bottom: 2rem;
                 border-radius: .5rem;
                 background-color: @grayColor;
                 color: black;
+                width: calc(100% - 4rem);
+                padding-left: 4rem;
 
                 &:focus {
                     border: 1px solid @pimaryColor;
                 }
+
             }
 
             button[type="submit"].btn {
@@ -1070,6 +1137,7 @@ footer {
         flex-direction: column;
         margin-top: 4rem;
 
+
         @media @laptop {
             flex-direction: row;
             margin-top: 0;
@@ -1077,11 +1145,26 @@ footer {
 
         .nav_link {
             margin: 0 1rem;
+            position: relative;
 
             @media (max-width: 978px) {
                 font-size: 1.6rem;
                 padding: 1.5rem 0;
                 font-weight: 600;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%) rotate(270deg);
+                    right: -3rem;
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    background: url(/fonts/icons/arrows/next.svg);
+                    background-size: auto;
+                    background-size: contain;
+
+                }
             }
 
 
@@ -1093,6 +1176,7 @@ footer {
 
 .services {
     border-bottom: 1px solid @borderColor;
+    .container__padding();
 
     @media @laptop {
         padding-bottom: 7rem;
