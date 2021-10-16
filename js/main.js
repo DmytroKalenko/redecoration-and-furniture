@@ -20,13 +20,19 @@ $('.works__container').slick({
     fade: true,
     infinite: true,
     adaptiveHeight: true,
-    asNavFor: '.photos__navigation'
+    asNavFor: '.photos__navigation',
 });
 $('.photos__navigation').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
     asNavFor: '.works__container',
-    focusOnSelect: true
+    focusOnSelect: true,
+    responsive: [{
+        breakpoint: 768,
+        settings: {
+            arrows: false,
+        }
+    }, ]
 });
 
 
@@ -115,27 +121,62 @@ scrollUp()
 
 //create burger-menu
 
-document.querySelector('#menu_navbar').appendChild(document.querySelector('nav'))
 
-document.querySelector('#menu_navbar').appendChild(document.querySelector('.contacts__content'))
-if(window.innerWidth < 978){
-    
 
-}
-function openNavigation(){
-    document.querySelector('.navbar-toggler').addEventListener('click',()=>{
-        document.querySelector('aside').classList.add('__show');
-        document.documentElement.classList.add('__showNav');
-        
-        window.addEventListener('click', (e)=>{
-            console.dir(e.target.tagName);
-            if(e.target.tagName !== 'ASIDE' && e.target.className !== "navbar-toggler" && e.target.className !== "toggler_icon"){
-                console.log('it is not aside');
-                document.querySelector('aside').classList.remove('__show');
-                document.documentElement.classList.remove('__showNav');
-            }
+
+if (window.innerWidth < 978) {
+    const burgerNav = document.querySelector('#menu_navbar');
+    document.querySelector('.navbar-toggler').classList.add('__show');
+
+    burgerNav.appendChild(document.querySelector('nav'));
+    burgerNav.appendChild(document.querySelector('.contacts'));
+    burgerNav.appendChild(document.querySelector('.contacts__content'));
+
+
+
+
+
+    function openNavigation() {
+        document.querySelector('.navbar-toggler').addEventListener('click', () => {
+            document.querySelector('aside').classList.add('__show');
+            document.documentElement.classList.add('__showNav');
+
+            window.addEventListener('click', (e) => {
+                console.dir(e.target.tagName);
+                if (e.target.tagName !== 'ASIDE' && e.target.className !== "navbar-toggler" && e.target.className !== "toggler_icon") {
+                    console.log('it is not aside');
+                    document.querySelector('aside').classList.remove('__show');
+                    document.documentElement.classList.remove('__showNav');
+                }
+            })
         })
-    })
-}
-openNavigation()
+    }
+    openNavigation()
 
+}
+
+
+
+
+//add slick lsider to component with work
+
+if (window.innerWidth < 978) {
+
+    $('.services__items').slick({
+
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        infinite: true,
+        initialSlide: 7,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1
+            }
+        }, ]
+
+    });
+
+}
