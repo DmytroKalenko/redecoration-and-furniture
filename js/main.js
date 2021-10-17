@@ -116,13 +116,13 @@ function validateForm() {
         validateName();
         validatePhoneNumber();
         if (validatForm.nameValid && validatForm.phoneValid) {
+            sendEmail();
             alert('form has been sended')
         }
     })
 
 }
 validateForm()
-
 
 // scroll to up site
 
@@ -145,10 +145,6 @@ function scrollUp() {
 scrollUp()
 
 //create burger-menu
-
-
-
-
 if (window.innerWidth < 978) {
     const burgerNav = document.querySelector('#menu_navbar');
     document.querySelector('.navbar-toggler').classList.add('__show');
@@ -180,8 +176,6 @@ if (window.innerWidth < 978) {
 }
 
 
-
-
 //add slick lsider to component with work
 
 if (window.innerWidth < 978) {
@@ -204,3 +198,27 @@ if (window.innerWidth < 978) {
     });
 
 }
+
+//send mail
+
+function sendEmail() {
+    var name = $("#name");
+    var phone = $("#tel");
+
+        $.ajax({
+           url: '/sendMail/sendMail.php',
+           method: 'POST',
+           dataType: 'json',
+           data: {
+               name: name.val(),
+               phone: phone.val(),
+
+           }, success: function (response) {
+                $('.contact-form__form')[0].reset();
+                alert("Message Sent Successfully.");
+           }
+        });
+   
+}
+
+

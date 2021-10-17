@@ -669,11 +669,12 @@ header .navbar-toggler img {
   padding: 5rem 0;
   margin-bottom: 4rem;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 4rem;
 }
 @media (min-width: 757px) {
   .workProcess .workProcess__steps {
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 }
 @media (min-width: 979px) {
@@ -722,6 +723,7 @@ header .navbar-toggler img {
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   padding: 1.5rem;
   background: #ffffff;
+  position: relative;
 }
 .workProcess .workProcess__steps .workProcess__step:nth-child(odd) {
   background-color: #b9a37f;
@@ -733,6 +735,24 @@ header .navbar-toggler img {
   }
   .workProcess .workProcess__steps .workProcess__step:nth-child(odd) .workProcess__step__title {
     color: #ffffff;
+  }
+}
+@media (max-width: 757px) {
+  .workProcess .workProcess__steps .workProcess__step::after {
+    content: '';
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 50%;
+    height: 3rem;
+    width: 3rem;
+    background: url(../fonts/icons/arrows/next.svg);
+    background-size: contain;
+    -webkit-transform: translateX(-50%) rotate(90deg);
+        -ms-transform: translateX(-50%) rotate(90deg);
+            transform: translateX(-50%) rotate(90deg);
+  }
+  .workProcess .workProcess__steps .workProcess__step:last-child::after {
+    content: unset;
   }
 }
 @media (min-width: 757px) {

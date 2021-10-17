@@ -720,10 +720,11 @@ header {
         padding: 5rem 0;
         margin-bottom: 4rem;
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 4rem;
 
         @media @tablet {
             grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
         }
 
         @media @laptop {
@@ -759,7 +760,7 @@ header {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             padding: 1.5rem;
             background: #ffffff;
-
+            position: relative;
             &:nth-child(odd) {
                 background-color: @pimaryColor;
 
@@ -776,6 +777,24 @@ header {
 
             }
 
+            @media (max-width: 757px){
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: calc(100% + .5rem);
+                    left: 50%;
+                    height: 3rem;
+                    width: 3rem;
+                    background: url(../fonts/icons/arrows/next.svg);
+                    background-size: contain;
+                    transform: translateX(-50%) rotate(90deg) ;
+                }
+                &:last-child{
+                    &::after{
+                        content: unset;
+                    }
+                }
+             }
             @media @tablet {
                 aspect-ratio: ~'1/1';
             }
