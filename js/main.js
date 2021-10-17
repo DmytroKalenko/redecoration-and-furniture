@@ -202,23 +202,23 @@ if (window.innerWidth < 978) {
 //send mail
 
 function sendEmail() {
-    var name = $("#name");
-    var phone = $("#tel");
+    var name = document.querySelector("#name").value;
+    var phone = document.querySelector("#tel").value;
 
         $.ajax({
            url: '/sendMail/sendMail.php',
            method: 'POST',
            dataType: 'json',
            data: {
-               name: name.val(),
-               phone: phone.val(),
+               name: name,
+               phone: phone,
 
            }, success: function (response) {
                 $('.contact-form__form')[0].reset();
                 alert("Message Sent Successfully.");
            }
         });
-   
+   console.log("запрос пошел");
 }
 
 
