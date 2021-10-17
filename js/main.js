@@ -8,6 +8,10 @@ $('.mainBanner').slick({
         }
     }, ]
 });
+
+
+
+
 $('.opinions .opinions__container').slick({
     infinite: true,
     dots: true,
@@ -35,16 +39,25 @@ $('.works__container').slick({
     asNavFor: '.photos__navigation',
 });
 $('.photos__navigation').slick({
-    slidesToShow: 5,
+    slidesToShow: 7,
     slidesToScroll: 1,
     asNavFor: '.works__container',
     focusOnSelect: true,
     responsive: [{
-        breakpoint: 768,
-        settings: {
-            arrows: false,
-        }
-    }, ]
+            breakpoint: 978,
+            settings: {
+                arrows: false,
+                slidesToShow: 5,
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                arrows: false,
+                slidesToShow: 3,
+            }
+        },
+    ]
 });
 
 
@@ -156,7 +169,6 @@ if (window.innerWidth < 978) {
             window.addEventListener('click', (e) => {
                 console.dir(e.target.tagName);
                 if (e.target.tagName !== 'ASIDE' && e.target.className !== "navbar-toggler" && e.target.className !== "toggler_icon") {
-                    console.log('it is not aside');
                     document.querySelector('aside').classList.remove('__show');
                     document.documentElement.classList.remove('__showNav');
                 }

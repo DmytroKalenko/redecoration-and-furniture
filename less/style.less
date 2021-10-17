@@ -977,12 +977,6 @@ header {
             .slick-slide {
                 margin: 0 2rem;
 
-                @media (max-width: 978px) {
-                    img {
-                        width: 4rem !important;
-                        height: 4rem;
-                    }
-                }
 
                 .navigation__item {
                     aspect-ratio: 1/1;
@@ -1029,11 +1023,13 @@ header {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            padding: 3rem;
+            padding: 1.5rem;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             border-radius: 1rem;
             background-color: #ffffff;
-            min-width: 300px;
+            min-width: 27rem;
+            align-items: center;
+
 
             @media @tablet {
                 width: 50%;
@@ -1072,6 +1068,11 @@ header {
                     border: 1px solid @pimaryColor;
                 }
 
+                @media (max-width: 757px) {
+                    width: calc(85% - 2rem);
+                    padding-left: 2rem;
+                }
+
             }
 
             button[type="submit"].btn {
@@ -1079,6 +1080,10 @@ header {
                 margin-bottom: 2rem;
                 font-size: 2rem;
                 padding: 14.8px 28.3px 17.2px 28.5px;
+
+                @media (max-width: 757px) {
+                    width: 85%;
+                }
 
             }
 
@@ -1135,7 +1140,7 @@ footer {
         align-content: center;
         align-items: center;
         flex-direction: column;
-        margin-top: 4rem;
+        margin: 4rem 0;
 
 
         @media @laptop {
@@ -1158,18 +1163,26 @@ footer {
                     top: 50%;
                     transform: translateY(-50%) rotate(270deg);
                     right: -3rem;
-                    height: 1.5rem;
-                    width: 1.5rem;
+                    height: 1rem;
+                    width: 1rem;
                     background: url(/fonts/icons/arrows/next.svg);
                     background-size: auto;
                     background-size: contain;
-
+                    filter: invert(1);
                 }
             }
 
 
         }
+
     }
+
+    .social__media {
+        @media (max-width: 978px) {
+            display: none;
+        }
+    }
+
 }
 
 
