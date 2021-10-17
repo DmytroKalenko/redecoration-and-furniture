@@ -307,7 +307,7 @@ button {
           transform: translateY(-50%);
   height: 5.5rem;
   width: 6.2rem;
-  background: url(./fonts/icons/arrows/next_primary_color.svg);
+  background: url(../fonts/icons/arrows/next_primary_color.svg);
   background-size: contain;
 }
 .slick-slider .slick-next {
@@ -558,7 +558,7 @@ header .navbar-toggler img {
   margin-left: -50vw;
   z-index: -2;
   background-color: rgba(0, 0, 0, 0.096);
-  background: url(./images/Benefits/background_compresed.jpg) no-repeat fixed;
+  background: url(../images/Benefits/background_compresed.jpg) no-repeat fixed;
   background-size: cover;
   -webkit-filter: blur(2px) brightness(50%);
           filter: blur(2px) brightness(50%);
@@ -694,7 +694,7 @@ header .navbar-toggler img {
   left: 50%;
   z-index: -1;
   margin-left: -50vw;
-  background: url(./images/workproces/background.jpg) fixed center no-repeat;
+  background: url(../images/workproces/background.jpg) fixed center no-repeat;
   background-size: cover;
   -webkit-filter: blur(2px) brightness(50%);
           filter: blur(2px) brightness(50%);
@@ -783,7 +783,7 @@ header .navbar-toggler img {
     right: -5rem;
     height: 4rem;
     width: 4rem;
-    background: url(./fonts/icons/arrows/next.svg);
+    background: url(../fonts/icons/arrows/next.svg);
     background-size: contain;
   }
   .workProcess .workProcess__steps .workProcess__step:nth-child(4)::after {
@@ -811,7 +811,7 @@ header .navbar-toggler img {
     right: -5rem;
     height: 4rem;
     width: 4rem;
-    background: url(./fonts/icons/arrows/next.svg);
+    background: url(../fonts/icons/arrows/next.svg);
     background-size: contain;
   }
 }
@@ -1124,7 +1124,7 @@ footer .footer__links .nav_link {
     right: -3rem;
     height: 1rem;
     width: 1rem;
-    background: url(./fonts/icons/arrows/next.svg);
+    background: url(../fonts/icons/arrows/next.svg);
     background-size: auto;
     background-size: contain;
     -webkit-filter: invert(1);
