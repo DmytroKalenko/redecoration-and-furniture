@@ -193,7 +193,10 @@ if (window.innerWidth < 978) {
         responsive: [{
             breakpoint: 768,
             settings: {
-                slidesToShow: 1
+                slidesToShow: 1,
+                centerMode: true,
+                centerPadding: '20px',
+                dots: false,
             }
         }, ]
 
