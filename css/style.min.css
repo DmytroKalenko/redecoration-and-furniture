@@ -490,6 +490,9 @@ header .navbar-toggler img {
 .mainBanner img {
   width: 100vw;
 }
+.mainBanner .slick-slide {
+  margin: 0;
+}
 .mainBanner .slick-list {
   position: relative;
 }
